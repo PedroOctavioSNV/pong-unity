@@ -504,6 +504,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaddleRight
       objectReference: {fileID: 0}
+    - target: {fileID: 6721094684681431495, guid: 5f6545d52d32bfa479334ffb944f97bb, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721094684681431495, guid: 5f6545d52d32bfa479334ffb944f97bb, type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1237,6 +1245,14 @@ PrefabInstance:
     - target: {fileID: 4747945753772855935, guid: 5f6545d52d32bfa479334ffb944f97bb, type: 3}
       propertyPath: m_Name
       value: PaddleLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721094684681431495, guid: 5f6545d52d32bfa479334ffb944f97bb, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721094684681431495, guid: 5f6545d52d32bfa479334ffb944f97bb, type: 3}
+      propertyPath: moveSpeed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
