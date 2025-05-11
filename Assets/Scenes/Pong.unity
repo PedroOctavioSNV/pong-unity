@@ -157,6 +157,54 @@ Transform:
   - {fileID: 2107280845}
   m_Father: {fileID: 2023235636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &168611796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168611798}
+  - component: {fileID: 168611797}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &168611797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168611796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bbe6f02e3b3d54ea2a2358d53833b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePlayer1: 0
+  scorePlayer2: 0
+  scoreTextLeft: {fileID: 411693715974416681}
+  scoreTextRight: {fileID: 1554603276}
+--- !u!4 &168611798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168611796}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &373876268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,6 +256,10 @@ PrefabInstance:
     - target: {fileID: 6141894130597040270, guid: bbb06ac6e93f8594589cd4312a734439, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250655387846022882, guid: bbb06ac6e93f8594589cd4312a734439, type: 3}
+      propertyPath: id
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -600,6 +652,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8248372141299900044, guid: adc1225e4f95e3e42b83594abe88fd19, type: 3}
   m_PrefabInstance: {fileID: 1554603274}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1554603276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2782484652496996165, guid: adc1225e4f95e3e42b83594abe88fd19, type: 3}
+  m_PrefabInstance: {fileID: 1554603274}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290115bd400e6a74b84a46f2042e3b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1622279475
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,6 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f67373fe63dc9a4c9a6cde40ce9ddc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 168611797}
   rigidbody2D: {fileID: 1622279479}
   maxInitialAngle: 0.67
   moveSpeed: 5
@@ -1010,6 +1074,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adc1225e4f95e3e42b83594abe88fd19, type: 3}
+--- !u!114 &411693715974416681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2782484652496996165, guid: adc1225e4f95e3e42b83594abe88fd19, type: 3}
+  m_PrefabInstance: {fileID: 411693715974416680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290115bd400e6a74b84a46f2042e3b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3984666603871236848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1061,6 +1136,10 @@ PrefabInstance:
     - target: {fileID: 6141894130597040270, guid: bbb06ac6e93f8594589cd4312a734439, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250655387846022882, guid: bbb06ac6e93f8594589cd4312a734439, type: 3}
+      propertyPath: id
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1138,6 +1217,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 168611798}
   - {fileID: 2023235636}
   - {fileID: 1542689190}
   - {fileID: 1368678920}

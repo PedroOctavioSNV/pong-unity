@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public GameManager gameManager;
     public new Rigidbody2D rigidbody2D;
     public float maxInitialAngle = 0.67f;
     public float moveSpeed = 1.0f;
@@ -26,6 +27,7 @@ public class Ball : MonoBehaviour
         ScoreZone scoreZone = collision.GetComponent<ScoreZone>();
         if (scoreZone)
         {
+            gameManager.OnScoreZoneReached(scoreZone.id);
             Debug.Log("Scored a point!");
             ResetBall();
             InitialPush();
