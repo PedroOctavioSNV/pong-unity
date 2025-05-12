@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
     public float moveSpeed = 1.0f;
     public float startX = 0f;
     public float maxStartY = 4f;
+    public float speedMultiplier = 1.1f;
 
     private void Start()
     {
@@ -39,5 +40,15 @@ public class Ball : MonoBehaviour
         float positionY = Random.Range(-maxStartY, maxStartY);
         Vector2 position = new Vector2(startX, positionY);
         transform.position = position;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Paddle paddle = collision.collider.GetComponent<Paddle>();
+
+        if (paddle)
+        {
+            rigidbody2D.linearVelocity *= speedMultiplier;
+        }
     }
 }
