@@ -51,7 +51,15 @@ public class Ball : MonoBehaviour
 
         if (paddle)
         {
+            GameManager.instance.gameAudio.PlayPaddleSound();
             rigidbody2D.linearVelocity *= speedMultiplier;
+        }
+
+        Wall wall = collision.collider.GetComponent<Wall>();
+
+        if (wall)
+        {
+            GameManager.instance.gameAudio.PlayWallSound();
         }
     }
 }
