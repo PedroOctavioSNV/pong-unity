@@ -3,6 +3,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public new Rigidbody2D rigidbody2D;
+    public BallAudio ballAudio;
     public float maxInitialAngle = 0.67f;
     public float moveSpeed = 1.0f;
     public float startX = 0f;
@@ -51,7 +52,7 @@ public class Ball : MonoBehaviour
 
         if (paddle)
         {
-            GameManager.instance.gameAudio.PlayPaddleSound();
+            ballAudio.PlayPaddleSound();
             rigidbody2D.linearVelocity *= speedMultiplier;
         }
 
@@ -59,7 +60,7 @@ public class Ball : MonoBehaviour
 
         if (wall)
         {
-            GameManager.instance.gameAudio.PlayWallSound();
+            ballAudio.PlayWallSound();
         }
     }
 }
