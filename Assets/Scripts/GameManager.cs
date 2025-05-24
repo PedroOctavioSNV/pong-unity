@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameUI gameUI;
     public GameAudio gameAudio;
+    public Shake screenshake;
 
     public int scorePlayer1, scorePlayer2;
     public int maxScore = 5;

@@ -38,6 +38,7 @@ public class Ball : MonoBehaviour
         if (scoreZone)
         {
             GameManager.instance.OnScoreZoneReached(scoreZone.id);
+            GameManager.instance.screenshake.StartShake(0.33f, 0.1f);
         }
     }
 
@@ -57,6 +58,7 @@ public class Ball : MonoBehaviour
             ballAudio.PlayPaddleSound();
             rigidbody2D.linearVelocity *= speedMultiplier;
             EmitParticle(5);
+            GameManager.instance.screenshake.StartShake(0.1f, 0.05f);
         }
 
         Wall wall = collision.collider.GetComponent<Wall>();
@@ -65,6 +67,7 @@ public class Ball : MonoBehaviour
         {
             ballAudio.PlayWallSound();
             EmitParticle(2);
+            GameManager.instance.screenshake.StartShake(0.033f, 0.033f);
         }
     }
 
