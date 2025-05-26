@@ -21,8 +21,20 @@ public class Paddle : MonoBehaviour
 
     public void Update()
     {
-        float movement = ProcessInput();
-        Move(movement);
+        if (id == 2 && GameManager.instance.IsPlayer2Ai())
+        {
+            MoveAi();
+        }
+        else
+        {
+            float movement = ProcessInput();
+            Move(movement);
+        }
+    }
+
+    private void MoveAi()
+    {
+        // Call Ai move code
     }
 
     private float ProcessInput()
@@ -45,7 +57,7 @@ public class Paddle : MonoBehaviour
     private void Move(float movement)
     {
         Vector2 velocity = rigidbody2D.linearVelocity
-    ;   velocity.y = moveSpeed * movement;
+    ; velocity.y = moveSpeed * movement;
         rigidbody2D.linearVelocity = velocity;
     }
 }

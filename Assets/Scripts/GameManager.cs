@@ -12,6 +12,13 @@ public class GameManager : MonoBehaviour
     public int maxScore = 5;
 
     public Action onReset;
+    public PlayMode playMode;
+
+    public enum PlayMode
+    {
+        PlayerVsPlayer,
+        PlayerVsAi
+    }
 
     private void Awake()
     {
@@ -68,5 +75,23 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         gameUI.onStartGame -= OnStartGame;
+    }
+
+    public void SwitchPlayMode()
+    {
+        switch (playMode)
+        {
+            case PlayMode.PlayerVsPlayer:
+                playMode = PlayMode.PlayerVsAi;
+                break;
+            case PlayMode.PlayerVsAi:
+                playMode = PlayMode.PlayerVsPlayer;
+                break;
+        }
+    }
+
+    public bool IsPlayer2Ai()
+    {
+        return playMode == PlayMode.PlayerVsAi;
     }
 }
