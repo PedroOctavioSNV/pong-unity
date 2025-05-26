@@ -63,7 +63,7 @@ public class GameUI : MonoBehaviour
                 playModeButtonText.text = "2 Players";
                 break;
             case GameManager.PlayMode.PlayerVsAi:
-                playModeButtonText.text = "Player vc AI";
+                playModeButtonText.text = "Player vs AI";
                 break;
 
         }

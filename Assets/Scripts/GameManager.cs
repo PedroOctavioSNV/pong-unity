@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameUI gameUI;
     public GameAudio gameAudio;
     public Shake screenshake;
+    public Ball ball;
 
     public int scorePlayer1, scorePlayer2;
     public int maxScore = 5;

@@ -5,8 +5,11 @@ public class Paddle : MonoBehaviour
     public new Rigidbody2D rigidbody2D;
     public int id;
     public float moveSpeed = 2f;
+    public float aiDeadzone = 1f;
 
     private Vector3 startPosition;
+    private int direction = 0;
+    private float moveSpeedMultiplier = 1f;
 
     private void Start()
     {
@@ -34,7 +37,18 @@ public class Paddle : MonoBehaviour
 
     private void MoveAi()
     {
-        // Call Ai move code
+        Vector2 ballPosition = GameManager.instance.ball.transform.position;
+        if (Mathf.Abs(ballPosition.y - transform.position.y) > aiDeadzone)
+        {
+            direction = ballPosition.y > transform.position.y ? 1 : -1;
+        }
+
+        if (Random.value < 0.01f)
+        {
+            moveSpeedMultiplier = Random.Range(0.05f, 1.5f);
+        }
+
+        Move(direction);
     }
 
     private float ProcessInput()
@@ -56,8 +70,8 @@ public class Paddle : MonoBehaviour
 
     private void Move(float movement)
     {
-        Vector2 velocity = rigidbody2D.linearVelocity
-    ; velocity.y = moveSpeed * movement;
+        Vector2 velocity = rigidbody2D.linearVelocity;
+        velocity.y = moveSpeed * moveSpeedMultiplier * movement;
         rigidbody2D.linearVelocity = velocity;
     }
 }

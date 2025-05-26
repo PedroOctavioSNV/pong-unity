@@ -465,10 +465,11 @@ MonoBehaviour:
   gameUI: {fileID: 1542689191}
   gameAudio: {fileID: 168611799}
   screenshake: {fileID: 519420033}
+  ball: {fileID: 1622279481}
   scorePlayer1: 0
   scorePlayer2: 0
   maxScore: 5
-  playMode: 0
+  playMode: 1
 --- !u!4 &168611798
 Transform:
   m_ObjectHideFlags: 0
@@ -6913,7 +6914,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1542689191}
         m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
-        m_MethodName: OnStartGameButtonClicked
+        m_MethodName: OnSwitchPlayModeButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
