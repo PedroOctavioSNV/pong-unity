@@ -74,4 +74,14 @@ public class Paddle : MonoBehaviour
         velocity.y = moveSpeed * moveSpeedMultiplier * movement;
         rigidbody2D.linearVelocity = velocity;
     }
+
+    public float GetHeight()
+    {
+        return transform.localScale.y;
+    }
+
+    public bool IsLeftPaddle()
+    {
+        return id == 1;
+    }
 }
