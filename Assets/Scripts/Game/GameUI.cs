@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameUI : MonoBehaviour
 {
+    [Header("Refs")]
     public ScoreText scoreTextPlayer1, scoreTextPlayer2;
     public GameObject menuObject;
     public TextMeshProUGUI winText;

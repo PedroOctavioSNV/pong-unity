@@ -3,18 +3,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Singleton instance of GameManager
     public static GameManager instance;
+
+    [Header("Refs")]
     public GameUI gameUI;
     public GameAudio gameAudio;
     public Shake screenshake;
     public Ball ball;
 
-    public int scorePlayer1, scorePlayer2;
+    private int scorePlayer1, scorePlayer2;
+
+    [Header("Configs")]
+    [Tooltip("Maximum score needed to win the game")]
     public int maxScore = 5;
 
+    // Delegate used as a reset event hook; external systems can subscribe via += to execute logic when the game resets.
+    // Invoked with onReset?.Invoke() to safely trigger all subscribed methods if any.
     public Action onReset;
     public PlayMode playMode;
-
     public enum PlayMode
     {
         PlayerVsPlayer,

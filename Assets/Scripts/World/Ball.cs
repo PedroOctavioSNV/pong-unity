@@ -7,22 +7,23 @@ public class Ball : MonoBehaviour
     public BallAudio ballAudio;
     public ParticleSystem collisionParticle;
 
-    [Header("Config")]
+    [Header("Configs")]
+    [SerializeField]
     [Range(0f, 1f)]
-    public float maxInitialAngle = 0.67f;
-
+    private float maxInitialAngle = 0.67f;
+    [SerializeField]
     [Tooltip("The maximum ball angle after colliding with a paddle")]
-    public float maxCollisionAngle = 45f;
-
-    [Space]
-    public float moveSpeed = 1.0f;
-    public float startX = 0f;
-    public float maxStartY = 4f;
+    private float maxCollisionAngle = 45f;
+    [SerializeField]
+    private float moveSpeed = 1.0f;
     [SerializeField]
     private float speedMultiplier = 1.1f;
+    private float startX = 0f;
+    private float maxStartY = 4f;
 
     private void Start()
     {
+        // Subscribe reset logic to GameManager reset events
         GameManager.instance.onReset += ResetBall;
         GameManager.instance.gameUI.onStartGame += ResetBall;
     }
@@ -31,6 +32,13 @@ public class Ball : MonoBehaviour
     {
         ResetBallPosition();
         InitialPush();
+    }
+
+    private void ResetBallPosition()
+    {
+        float positionY = Random.Range(-maxStartY, maxStartY);
+        Vector2 position = new Vector2(startX, positionY);
+        transform.position = position;
     }
 
     private void InitialPush()
@@ -50,13 +58,6 @@ public class Ball : MonoBehaviour
             GameManager.instance.OnScoreZoneReached(scoreZone.id);
             GameManager.instance.screenshake.StartShake(0.33f, 0.1f);
         }
-    }
-
-    private void ResetBallPosition()
-    {
-        float positionY = Random.Range(-maxStartY, maxStartY);
-        Vector2 position = new Vector2(startX, positionY);
-        transform.position = position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -82,6 +83,7 @@ public class Ball : MonoBehaviour
         }
     }
 
+    // Adjusts the outgoing angle of the ball based on where it hit the paddle
     private void AdjustAngle(Paddle paddle, Collision2D collision)
     {
         // Debugs so we can actually see the lines.

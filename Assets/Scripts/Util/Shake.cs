@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Shake : MonoBehaviour
 {
+    // Stores the original local position to reset after shaking
     private Vector3 initialPosition;
 
     private void Awake()
@@ -10,6 +11,8 @@ public class Shake : MonoBehaviour
         initialPosition = transform.localPosition;
     }
 
+    // Starts a shake effect with given max offset and duration.
+    // Stops any existing shake coroutine before starting a new one.
     public void StartShake(float offset, float duration)
     {
         StopShake();
@@ -22,6 +25,7 @@ public class Shake : MonoBehaviour
         transform.localPosition = initialPosition;
     }
 
+    // Coroutine that applies shake offsets over the given duration
     private IEnumerator ShakeSequence(float offset, float duration)
     {
         float durationPassed = 0f;

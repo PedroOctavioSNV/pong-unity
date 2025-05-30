@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ScoreText : MonoBehaviour
 {
+    [Header("Refs")]
     public TextMeshProUGUI text;
     public Animator animator;
 
