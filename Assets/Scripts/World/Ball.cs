@@ -1,17 +1,25 @@
-using System.Drawing;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    [Header("Refs")]
     public new Rigidbody2D rigidbody2D;
     public BallAudio ballAudio;
     public ParticleSystem collisionParticle;
+
+    [Header("Config")]
+    [Range(0f, 1f)]
     public float maxInitialAngle = 0.67f;
+
+    [Tooltip("The maximum ball angle after colliding with a paddle")]
     public float maxCollisionAngle = 45f;
+
+    [Space]
     public float moveSpeed = 1.0f;
     public float startX = 0f;
     public float maxStartY = 4f;
-    public float speedMultiplier = 1.1f;
+    [SerializeField]
+    private float speedMultiplier = 1.1f;
 
     private void Start()
     {

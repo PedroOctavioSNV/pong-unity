@@ -5,11 +5,18 @@ public class Paddle : MonoBehaviour
     public new Rigidbody2D rigidbody2D;
     public int id;
     public float moveSpeed = 2f;
+
+    [Header("AI")]
     public float aiDeadzone = 1f;
+    public float aiMoveSpeedMultiplierMin = 0.5f;
+    public float aiMoveSpeedMultiplierMax = 1.5f;
 
     private Vector3 startPosition;
     private int direction = 0;
     private float moveSpeedMultiplier = 1f;
+
+    private const string MovePlayer1InputName = "MovePlayer1";
+    private const string MovePlayer2InputName = "MovePlayer2";
 
     private void Start()
     {
@@ -30,7 +37,7 @@ public class Paddle : MonoBehaviour
         }
         else
         {
-            float movement = ProcessInput();
+            float movement = GetInput();
             Move(movement);
         }
     }
@@ -45,27 +52,15 @@ public class Paddle : MonoBehaviour
 
         if (Random.value < 0.01f)
         {
-            moveSpeedMultiplier = Random.Range(0.05f, 1.5f);
+            moveSpeedMultiplier = Random.Range(aiMoveSpeedMultiplierMin, aiMoveSpeedMultiplierMax);
         }
 
         Move(direction);
     }
 
-    private float ProcessInput()
+    private float GetInput()
     {
-        float movement = 0f;
-
-        switch (id)
-        {
-            case 1:
-                movement = Input.GetAxis("MovePlayer1");
-                break;
-            case 2:
-                movement = Input.GetAxis("MovePlayer2");
-                break;
-        }
-
-        return movement;
+        return IsLeftPaddle() ? Input.GetAxis(MovePlayer1InputName) : Input.GetAxis(MovePlayer2InputName);
     }
 
     private void Move(float movement)

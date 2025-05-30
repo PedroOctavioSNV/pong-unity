@@ -55,6 +55,11 @@ public class GameUI : MonoBehaviour
         AdjustPlayModeButtonText();
     }
 
+    public void OnQuitButtonClicked()
+    {
+        Application.Quit();
+    }
+
     private void AdjustPlayModeButtonText()
     {
         switch (GameManager.instance.playMode)
