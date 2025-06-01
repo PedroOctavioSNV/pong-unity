@@ -499,8 +499,6 @@ MonoBehaviour:
   gameAudio: {fileID: 168611799}
   screenshake: {fileID: 519420033}
   ball: {fileID: 1622279481}
-  scorePlayer1: 0
-  scorePlayer2: 0
   maxScore: 5
   playMode: 1
 --- !u!4 &168611798
@@ -7847,6 +7845,7 @@ MonoBehaviour:
   scoreTextPlayer1: {fileID: 411693715974416681}
   scoreTextPlayer2: {fileID: 1554603276}
   menuObject: {fileID: 2142177198}
+  quitButton: {fileID: 584537350}
   winText: {fileID: 215960883}
   volumeValueText: {fileID: 1229715795}
   playModeButtonText: {fileID: 97525131}
@@ -8285,8 +8284,6 @@ MonoBehaviour:
   maxInitialAngle: 0.67
   maxCollisionAngle: 45
   moveSpeed: 5
-  startX: 0
-  maxStartY: 4
   speedMultiplier: 1.1
 --- !u!1 &1646619276
 GameObject:
