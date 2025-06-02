@@ -16,7 +16,7 @@ Built in Unity as a minimalist portfolio piece, this remake reimagines Pong with
 
 ## ▶️ Play Now
 
-Play **PongU** directly in your browser or download it on [Itch.io](https://your-itchio-link-here](https://pedrooctaviosnv.itch.io/pongu)).</br>
+Play **PongU** directly in your browser or download it on [Itch.io](https://pedrooctaviosnv.itch.io/pongu).</br>
 No installation required—just jump in and play.
 
 ---
