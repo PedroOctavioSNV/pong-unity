@@ -1,6 +1,7 @@
 # 🕹️ PongU
 
-**PongU**A modern remake of the classic arcade Pong game. </br> Built in Unity as a minimalist portfolio piece, this remake reimagines Pong with clean visuals, responsive controls, and smooth gameplay.
+A modern remake of the classic arcade Pong game. </br>
+Built in Unity as a minimalist portfolio piece, this remake reimagines Pong with clean visuals, responsive controls, and smooth gameplay.
 
 ---
 
@@ -15,7 +16,7 @@
 
 ## ▶️ Play Now
 
-Play **PongU** directly in your browser or download it on [Itch.io](https://your-itchio-link-here](https://pedrooctaviosnv.itch.io/pongu)).
+Play **PongU** directly in your browser or download it on [Itch.io](https://your-itchio-link-here](https://pedrooctaviosnv.itch.io/pongu)).</br>
 No installation required—just jump in and play.
 
 ---
