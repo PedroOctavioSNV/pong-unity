@@ -37,5 +37,5 @@ No installation required—just jump in and play.
 
 ## 🙌 Acknowledgements
 
-Inspired by the original **Pong** arcade game by Atari.
+Inspired by the original **Pong** arcade game by Atari.  </br>
 Redesigned and remade as a personal project to sharpen Unity and C# skills.
