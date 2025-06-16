@@ -42,7 +42,7 @@ public class Paddle : MonoBehaviour
         }
     }
 
-    private void ResetPosition()
+    public void ResetPosition()
     {
         transform.position = startPosition;
     }

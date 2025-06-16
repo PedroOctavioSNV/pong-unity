@@ -36,6 +36,7 @@ public class GameUI : MonoBehaviour
 
     public void OnStartGameButtonClicked()
     {
+        Time.timeScale = 1;
         menuObject.SetActive(false);
         onStartGame?.Invoke();
     }
@@ -44,6 +45,13 @@ public class GameUI : MonoBehaviour
     {
         menuObject.SetActive(true);
         winText.text = $"Player {winnerId} wins!";
+    }
+
+    public void OnCancelGame()
+    {
+        Time.timeScale = 0;
+        menuObject.SetActive(true);
+        winText.text = $"PongU";
     }
 
     public void OnVolumeChanged(float value)

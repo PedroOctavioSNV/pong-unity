@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameAudio gameAudio;
     public Shake screenshake;
     public Ball ball;
+    public Paddle paddlePlayer1;
+    public Paddle paddlePlayer2;
 
     private int scorePlayer1, scorePlayer2;
 
@@ -38,6 +40,14 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             gameUI.onStartGame += OnStartGame;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameUI.OnCancelGame();
         }
     }
 
@@ -78,6 +88,8 @@ public class GameManager : MonoBehaviour
         scorePlayer1 = 0;
         scorePlayer2 = 0;
         gameUI.UpdateScores(scorePlayer1, scorePlayer2);
+        paddlePlayer1.ResetPosition();
+        paddlePlayer2.ResetPosition();
     }
 
     private void OnDestroy()
